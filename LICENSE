@@ -1,21 +1,26 @@
-MIT License
+RELAY PROPRIETARY LICENSE
+Copyright (c) 2025 Relay. All rights reserved.
 
-Copyright (c) 2025 Evil Martians
+1. RESERVATION OF RIGHTS
+   This software and associated documentation files (the "Software") are the 
+   confidential and proprietary information of Relay ("The Company"). 
+   All rights, title, and interest in and to the Software, including any 
+   intellectual property rights, remain strictly with The Company.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+2. NO GRANT OF RIGHTS
+   Nothing in this repository grants any license, express or implied, to 
+   copy, modify, distribute, sell, or sublicense the Software. 
+   
+   You are strictly prohibited from:
+   a. Reproducing the Software in whole or in part.
+   b. Creating derivative works based on the Software.
+   c. Reverse engineering, decompiling, or disassembling the Software.
+   d. Using the Software to build a competitive product or service.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+3. UNAUTHORIZED USE
+   Any unauthorized use, reproduction, or distribution of this Software 
+   is a violation of copyright laws and international treaties and may 
+   result in severe civil and criminal penalties.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+4. NO WARRANTY
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
