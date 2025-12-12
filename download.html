@@ -87,10 +87,18 @@
             <button class="button primary full-width" style="margin-bottom: 20px; opacity: 0.6; cursor: not-allowed;" disabled>
                 <i class="fa-solid fa-lock"></i> Pilot Is Currently Not Accepting Users
             </button>
-            <p class="paragraph s secondary" style="text-align: center; margin-top: -10px; margin-bottom: 20px;">
-                We are currently ensuring the pilot is ready for Durban.<br>
-                <a href="#" style="color: var(--color-accent); text-decoration: underline;">Join the waitlist</a> to be notified next.
-            </p>
+            <div style="margin-top: -10px; margin-bottom: 20px;">
+    <p class="paragraph s secondary" style="text-align: center; margin-bottom: 12px;">
+        We are currently ensuring the pilot is ready for Durban.<br>
+        Join the waitlist to be notified next.
+    </p>
+    
+    <form name="waitlist" method="POST" data-netlify="true" style="display: flex; gap: 8px; justify-content: center;">
+        <input type="email" name="email" placeholder="Enter your email" required 
+               style="background: #0d1117; border: 1px solid #30363d; color: white; padding: 8px 12px; border-radius: 6px; font-size: 13px; width: 200px;">
+        <button type="submit" class="button tertiary compact" style="border: 1px solid var(--color-accent);">Join</button>
+    </form>
+    </div>
 
             <p class="paragraph s bold" style="margin-bottom: 8px;">Security Verification</p>
             <p class="paragraph s secondary">Verify this SHA-256 checksum matches the file you download.</p>
