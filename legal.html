@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-dark">
+<head>
+  <meta charset="utf-8" />
+  <title>Relay | Legal Center</title>
+  <meta content="Terms of Service for the Relay Pilot." name="description" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link rel="icon" href="images/favicon/favicon.ico" sizes="32x32" />
+  
+  <link href="vendor/font-awesome-6.7.2/css/all.min.css" rel="stylesheet" />
+  <link href="css/index.css" rel="stylesheet" type="text/css" />
+  <link href="css/tablet.css" rel="stylesheet" type="text/css" />
+  <link href="css/mobile.css" rel="stylesheet" type="text/css" />
+  <script src="js/main.js" type="text/javascript" defer></script>
+</head>
+
+<body>
+  <div class="page-container">
+    <header class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <span style="font-weight: 800; font-size: 22px; letter-spacing: -0.5px; color: var(--color-text-primary);">RELAY</span>
+      </a>
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Back to Home</a>
+      </nav>
+    </header>
+
+    <main style="max-width: 800px; margin: 0 auto; padding: 60px 20px;">
+      <section>
+        <div class="heading">
+          <h1 style="font-size: 32px;">Terms of Service</h1>
+          <p class="paragraph s secondary">Beta Pilot • Last Updated: December 2025</p>
+        </div>
+
+        <div style="margin-top: 40px;" class="paragraph m secondary">
+          
+          <h3 style="color: var(--color-text-primary);">1. Platform Nature</h3>
+          <p>Relay ("The Platform") is a technology utility that connects independent Runners with Clients. Relay acts as a software platform and communication layer. Relay is <strong>not</strong> a transportation carrier, a logistics provider, or a bank.</p>
+
+          <h3 style="color: var(--color-text-primary);">2. Payments & Funds</h3>
+          <p>Relay facilitates payments but <strong>does not hold user funds</strong> in a custodial capacity.</p>
+          <ul>
+            <li>All payments are processed by Stripe via Connected Accounts.</li>
+            <li>When a job is posted, funds are "Authorized" (reserved) by the Client's bank.</li>
+            <li>Funds are "Captured" (charged and transferred) only upon confirmation of job completion.</li>
+            <li>If a job is cancelled before completion, the Authorization is voided; no charge is made.</li>
+          </ul>
+          <p style="margin-top: 10px; font-size: 14px;"><em>Relay stores transaction references only (e.g., Payment Intent IDs), not card details.</em></p>
+
+          <h3 style="color: var(--color-text-primary);">3. Liability Limitation</h3>
+          <p>By using the Pilot, you acknowledge that:</p>
+          <ul>
+            <li>Runners are independent freelancers. They are not employees of Relay.</li>
+            <li>Relay provides identity verification and tracking tools, but does not insure goods.</li>
+            <li>Relay is not liable for goods lost, stolen, or damaged during the run.</li>
+            <li>Our maximum liability is limited to the <strong>Service Fee</strong> collected by Relay for the specific transaction in dispute.</li>
+          </ul>
+
+          <h3 style="color: var(--color-text-primary);">4. Identity Accuracy</h3>
+          <p>You agree to provide accurate, legal identity information (Name, Date of Birth, Gender) as it appears on your government-issued ID. Providing false identity information is a violation of these terms and will result in immediate suspension.</p>
+
+          <h3 style="color: var(--color-text-primary);" id="disputes">5. Dispute Resolution</h3>
+          <p>In the event of a dispute (e.g., non-delivery), Relay may review available telemetry data (GPS logs, chat history, scan timestamps) to determine whether job completion is verified. Based on this verification status, Relay may initiate payment capture or void through Stripe.</p>
+
+          <h3 style="color: var(--color-text-primary);">6. Prohibited Items</h3>
+          <p>You may not use Relay to transport: Illegal substances, weapons, hazardous materials, high-value cash, or live animals.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-menu">
+        <div><p class="paragraph s">© 2025 Relay.</p></div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

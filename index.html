@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-dark">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Relay | Proof-Based Logistics in Durban</title>
+  <meta content="Secure, verified deliveries in Durban. Payment is authorized upfront and captured only upon completion." name="description" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Relay" />
+  <meta property="og:title" content="Relay - Verifiable Logistics" />
+  <meta property="og:description" content="Authorize upfront. Capture after completion. Every handoff tracked." />
+  <meta property="og:url" content="https://relay.app" />
+  
+  <link rel="icon" href="images/favicon/favicon.ico" sizes="32x32" />
+  
+  <link href="vendor/font-awesome-6.7.2/css/all.min.css" rel="stylesheet" />
+  <link href="css/index.css" rel="stylesheet" type="text/css" />
+  <link href="css/tablet.css" rel="stylesheet" type="text/css" />
+  <link href="css/mobile.css" rel="stylesheet" type="text/css" />
+  <script src="js/main.js" type="text/javascript" defer></script>
+
+  <style>
+    /* Transaction Log Styles */
+    .log-entry { display: flex; margin-bottom: 12px; font-family: var(--font-mono); font-size: 13px; }
+    .log-time { color: var(--color-text-tertiary); width: 60px; flex-shrink: 0; }
+    .log-status { font-weight: 600; margin-right: 12px; width: 140px; flex-shrink: 0; }
+    .log-desc { color: var(--color-text-secondary); }
+    .status-green { color: #4ade80; }
+    .status-blue { color: #60a5fa; }
+    .status-purple { color: #c084fc; }
+    .status-yellow { color: #fbbf24; }
+    
+    /* Timeline UI Styles */
+    .timeline-steps { display: flex; justify-content: space-between; margin-top: 20px; position: relative; }
+    .timeline-steps::before { content: ''; position: absolute; top: 14px; left: 0; right: 0; height: 2px; background: var(--color-border-level-2); z-index: 0; }
+    .step { position: relative; z-index: 1; text-align: center; width: 25%; }
+    .step-dot { width: 30px; height: 30px; background: var(--color-surface); border: 2px solid var(--color-accent); border-radius: 50%; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; color: var(--color-accent); background-color: #0d1117; }
+    .step-text { font-size: 12px; color: var(--color-text-secondary); font-weight: 500; }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+        .log-entry { flex-wrap: wrap; }
+        .log-desc { width: 100%; padding-left: 60px; margin-top: 4px; }
+        .step-text { font-size: 10px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="background-gradient"></div>
+  <div class="page-container">
+    
+    <header class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <span style="font-weight: 800; font-size: 22px; letter-spacing: -0.5px; color: var(--color-text-primary);">RELAY</span>
+      </a>
+      <nav role="navigation" class="nav-menu" data-navigation>
+        <a href="#clients" class="nav-link">For Clients</a>
+        <a href="#runners" class="nav-link">For Runners</a>
+        <a href="#process" class="nav-link">Process</a>
+        <a href="legal.html" class="nav-link">Legal</a>
+        <div class="button-group stacked margin-top-l mobile-only">
+          <a href="download.html" class="button primary">Get App</a>
+        </div>
+      </nav>
+      <div class="button-group">
+        <a href="legal.html" class="button tertiary compact hide-on-mobile">Terms</a>
+        <a href="download.html" class="button primary compact">Get App</a>
+        <button class="button ghost compact nav-hamburger" data-mobile-toggle aria-label="Show menu">
+          <span class="fa-solid fa-bars icon m"></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="heading hero centered">
+          <div class="eyebrow" style="border-color: #059669; background: rgba(5, 150, 105, 0.1); color: #34d399;">
+            <i class="fa-solid fa-circle" style="font-size: 8px; margin-right: 8px;"></i> Durban Pilot / Beta
+          </div>
+          
+          <h1 class="balanced">
+            Deliveries with proof —<br>and payment protection.
+          </h1>
+          
+          <p class="paragraph m secondary balanced">
+            Authorize upfront. Capture after completion. Every handoff tracked.<br>
+            Relay replaces informal cash deals with a verifiable, auditable workflow.
+          </p>
+
+          <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 12px; margin-bottom: 24px; font-size: 13px; color: var(--color-text-secondary);">
+             <span style="display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-check" style="color: var(--color-accent);"></i> Authorized Upfront</span>
+             <span style="display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-check" style="color: var(--color-accent);"></i> Identity Checked</span>
+             <span style="display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-check" style="color: var(--color-accent);"></i> Completion Verified</span>
+          </div>
+          
+          <div class="button-group margin-paragraph centered" style="flex-direction: column; gap: 8px;">
+            <a href="download.html" class="button primary">
+              <i class="fa-brands fa-android"></i> Download Android APK
+            </a>
+            <div style="font-family: var(--font-mono); font-size: 10px; color: var(--color-text-tertiary); display: flex; gap: 8px; align-items: center;">
+                <i class="fa-solid fa-shield-halved"></i> Signed APK • SHA-256 Posted
+            </div>
+          </div>
+        </div>
+        
+        <div class="image-wide">
+          <img src="images/placeholder-main-ui.png" width="100%" 
+               style="border-radius: 12px; border: 1px solid var(--color-border-level-2); box-shadow: 0 20px 40px rgba(0,0,0,0.4);"
+               alt="Relay App Interface showing a secured job" />
+        </div>
+      </section>
+
+      <section>
+        <p class="paragraph l bold text-centered" style="color: var(--color-text-secondary);">
+          Pilot zones active now
+        </p>
+        <div class="clients-container" style="opacity: 0.6;">
+           <div style="display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; font-family: var(--font-mono); font-size: 14px; letter-spacing: 1px; color: var(--color-text-tertiary);">
+              <span>MORNINGSIDE</span>
+              <span>/</span>
+              <span>UMHLANGA</span>
+              <span>/</span>
+              <span>BEREA</span>
+              <span>/</span>
+              <span>WESTVILLE</span>
+           </div>
+        </div>
+      </section>
+
+      <section id="process">
+        <div class="grid columns-1/2-1 gap-xl">
+          <div class="heading">
+            <h2 class="no-top-margin">We keep an audit trail.</h2>
+            <p class="paragraph m secondary">
+              Informal deals on WhatsApp are messy. Relay tracks everything: money, location, and identity. If there is a dispute, we maintain an audit log to review what happened.
+            </p>
+            
+            <div style="background: var(--color-surface); padding: 20px; border-radius: 12px; margin-top: 24px;">
+                <p class="paragraph s bold" style="margin-top:0; margin-bottom: 20px;">Standard Job Flow</p>
+                <div class="timeline-steps">
+                    <div class="step">
+                        <div class="step-dot"><i class="fa-solid fa-lock"></i></div>
+                        <div class="step-text">Authorized</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-dot"><i class="fa-solid fa-user"></i></div>
+                        <div class="step-text">Assigned</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-dot"><i class="fa-solid fa-qrcode"></i></div>
+                        <div class="step-text">Verified</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-dot"><i class="fa-solid fa-check"></i></div>
+                        <div class="step-text">Captured</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 24px;">
+                <a href="#runners" class="button secondary compact">For Runners</a>
+                <a href="#clients" class="button tertiary compact">For Clients</a>
+            </div>
+          </div>
+
+          <div class="card-code-block dark" style="background: #0d1117; border: 1px solid #30363d;">
+            <div style="padding: 10px;">
+              <div style="display:flex; justify-content:space-between; margin-bottom: 20px;">
+                 <div style="color: #8b949e; font-family: var(--font-mono); font-size: 12px; letter-spacing: 1px;">
+                    // LIVE TRANSACTION LOG #8821
+                 </div>
+                 <div style="color: #4ade80; font-family: var(--font-mono); font-size: 12px;">
+                    ● CONFIRMED
+                 </div>
+              </div>
+              
+              <div class="log-entry">
+                <span class="log-time">14:00</span>
+                <span class="log-status status-blue">JOB POSTED</span>
+                <span class="log-desc">"Collect package from Westville Mall"</span>
+              </div>
+
+              <div class="log-entry">
+                <span class="log-time">14:01</span>
+                <span class="log-status status-purple">PAYMENT AUTH</span>
+                <span class="log-desc">R150.00 authorized (not charged).</span>
+              </div>
+
+              <div class="log-entry">
+                <span class="log-time">14:15</span>
+                <span class="log-status status-blue">ASSIGNED</span>
+                <span class="log-desc">Thabo M. (ID Verified on file).</span>
+              </div>
+              
+              <div class="log-entry">
+                <span class="log-time">14:40</span>
+                <span class="log-status status-yellow">LOCATION FIX</span>
+                <span class="log-desc">GPS confirmed at pickup point.</span>
+              </div>
+
+              <div class="log-entry">
+                <span class="log-time">15:10</span>
+                <span class="log-status status-green">PROOF SUBMITTED</span>
+                <span class="log-desc">Secure PIN code matched.</span>
+              </div>
+              
+              <div style="border-top: 1px solid #30363d; margin-top: 12px; padding-top: 12px;" class="log-entry">
+                <span class="log-time">15:10</span>
+                <span class="log-status status-green">PAYMENT CAPTURE</span>
+                <span class="log-desc">Charge captured; payout initiated.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="clients">
+        <div class="heading centered">
+          <h2 class="no-top-margin">Clients: Sending or Buying?</h2>
+          <p class="paragraph m secondary">Stop trusting strangers with cash.</p>
+        </div>
+        
+        <div class="grid columns-3">
+          <div class="feature-card">
+            <div class="feature-heading">
+              <div class="fa-solid fa-lock icon l color-accent" style="margin-bottom: 16px;"></div>
+              <h3 class="no-top-margin">Funds Reserved</h3>
+              <p class="paragraph s secondary">
+                We authorize the payment on your card, but we <strong>don't charge you</strong> until the job is verified. If the runner ghosts, the auth is voided.
+              </p>
+            </div>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-heading">
+              <div class="fa-solid fa-user-shield icon l color-accent" style="margin-bottom: 16px;"></div>
+              <h3 class="no-top-margin">Identity Checked</h3>
+              <p class="paragraph s secondary">
+                Every runner submits a legal ID for verification. You see their real name and photo before they arrive. No anonymous accounts.
+              </p>
+            </div>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-heading">
+               <div class="fa-solid fa-map-location-dot icon l color-accent" style="margin-bottom: 16px;"></div>
+              <h3 class="no-top-margin">Live Tracking</h3>
+              <p class="paragraph s secondary">
+                See exactly where your item is. No more "I'm 5 minutes away" lies. Watch them move on the map in real-time.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="runners" style="background-color: var(--color-surface); border-radius: 24px; padding: 60px 40px; margin-top: 40px;">
+        <div class="grid columns-1/2-1 gap-xl">
+           <div>
+             <h2 class="no-top-margin">For Runners</h2>
+             <p class="paragraph m secondary">
+               Eliminate the risk of non-payment.
+             </p>
+             <p class="paragraph m secondary">
+               On Relay, you can see that the job is <strong>Authorized</strong> before you start driving. This means the customer has valid funds ready for you.
+             </p>
+             <div class="button-group margin-paragraph">
+                <a href="download.html" class="button primary">Join the Pilot</a>
+             </div>
+           </div>
+           
+           <div class="grid columns-2">
+             <div>
+                <h4 style="margin-bottom: 8px; color: #fff;">Guaranteed Settlement</h4>
+                <p class="paragraph s secondary">If you complete the job according to the log, payment capture is automatic.</p>
+             </div>
+             <div>
+                <h4 style="margin-bottom: 8px; color: #fff;">Build Your Profile</h4>
+                <p class="paragraph s secondary">Every verified job adds to your rating. High-trust runners get priority access.</p>
+             </div>
+           </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="heading centered">
+          <h2 class="no-top-margin">Common Questions</h2>
+        </div>
+        <div class="accordion-container">
+          <details class="accordion-item">
+            <summary class="accordion-toggle">
+              <p class="paragraph m bold">Is my money safe?</p>
+              <span class="accordion-chevron fa-solid fa-chevron-down"></span>
+            </summary>
+            <div class="accordion-content">
+              <p>Yes. Relay uses Stripe's authorization system. When you post a job, the bank places a temporary hold on the funds. Relay initiates the transfer to the runner only after the job is marked complete.</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-toggle">
+              <p class="paragraph m bold">How do you verify runners?</p>
+              <span class="accordion-chevron fa-solid fa-chevron-down"></span>
+            </summary>
+            <div class="accordion-content">
+              <p>Runners must submit government-issued identification. We perform a check to ensure they are a real person with a legal presence in South Africa.</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-toggle">
+              <p class="paragraph m bold">What if an item goes missing?</p>
+              <span class="accordion-chevron fa-solid fa-chevron-down"></span>
+            </summary>
+            <div class="accordion-content">
+              <p>We verify identity and keep job telemetry (where permitted). If required by law, we can provide records to authorities. Because payment is authorized upfront and captured only after completion, you are not charged for failed deliveries.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section class="promo-cta">
+        <div class="heading centered">
+          <h2>Secure your next delivery</h2>
+          <p class="paragraph m secondary">Pilot live in Durban.</p>
+          <div class="button-group margin-paragraph centered">
+            <a href="download.html" class="button primary">Download Android APK</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-menu">
+        <div>
+          <p class="paragraph s">
+            © 2025 Relay.<br />
+            Durban, South Africa.<br>
+            <span style="color: var(--color-text-tertiary);">Identity Verified • Payment Protected</span>
+          </p>
+        </div>
+        <div>
+          <div class="link-list">
+            <a href="legal.html" class="ui s">Terms of Service</a>
+            <a href="legal.html" class="ui s">Privacy Policy</a>
+            <a href="legal.html" class="ui s">Dispute Policy</a>
+          </div>
+        </div>
+        <div>
+          <div class="link-list">
+            <a href="#" class="icon-link ui s">
+              <div class="fa-brands fa-whatsapp icon m color-accent"></div>
+              <div class="pseudo-link">
+                <strong>WhatsApp Support</strong><br>
+                <span style="font-size: 10px; opacity: 0.7;">8am - 8pm • 30min Response (Pilot)</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
