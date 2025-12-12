@@ -23,9 +23,10 @@
     }
     .checksum-val {
         font-family: var(--font-mono);
-        font-size: 12px;
+        font-size: 11px;
         color: #e6edf3;
         word-break: break-all;
+        line-height: 1.4;
     }
     .step-number {
         display: inline-flex;
@@ -53,7 +54,7 @@
     }
     details summary {
         cursor: pointer;
-        list-style: none;
+        list-style: none; /* Hide default triangle */
         text-decoration: underline;
         color: var(--color-text-tertiary);
     }
@@ -83,8 +84,8 @@
 
         <div style="background: var(--color-surface); border-radius: 16px; padding: 30px; margin-top: 30px; border: 1px solid var(--color-border-level-2);">
             
-            <a href="/files/relay-v0.1.0-alpha-arm64.apk" download class="button primary full-width" style="margin-bottom: 20px;">
-                <i class="fa-solid fa-download"></i> Download APK (25MB)
+            <a href="files/relay-v0.1.0-alpha-arm64.apk" download class="button primary full-width" style="margin-bottom: 20px;">
+                <i class="fa-solid fa-download"></i> Download APK (51MB)
             </a>
 
             <p class="paragraph s bold" style="margin-bottom: 8px;">Security Verification</p>
@@ -94,7 +95,7 @@
                 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px;">
                     <div style="flex:1; min-width:0;">
                         <span style="color: #8b949e; font-size: 11px;">SHA256:</span><br>
-                        <span class="checksum-val" id="shaValue">e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</span>
+                        <span class="checksum-val" id="shaValue">2A946F462BA6D1B2F183A3EBCF9F220335648B43AA3C0A0FF958A9805D3615B9</span>
                     </div>
                     <button class="button tertiary compact" id="copySha" type="button" style="padding: 4px 8px; font-size: 11px; white-space:nowrap;">
                         <i class="fa-regular fa-copy"></i> Copy
@@ -141,7 +142,7 @@
                 <div>
                     <p class="paragraph m" style="margin:0;">If prompted, allow "Install from Unknown Sources".</p>
                     <p class="paragraph s secondary" style="margin-top: 4px; color: #fbbf24;">
-                        <i class="fa-solid fa-triangle-exclamation"></i> <strong>Note:</strong> Android may warn you about unknown apps. Only install Relay from <strong>relay download page</strong>.
+                        <i class="fa-solid fa-triangle-exclamation"></i> <strong>Note:</strong> Android may warn you about unknown apps. Only install Relay from <strong>relay.app</strong>.
                     </p>
                 </div>
             </div>
@@ -177,7 +178,6 @@
                 setTimeout(() => msg.style.display = "none", 2000); 
             }
           } catch (_) {
-            // fallback: Select text
             const r = document.createRange();
             r.selectNodeContents(val);
             const sel = window.getSelection();
