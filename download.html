@@ -78,38 +78,33 @@
     <main style="max-width: 600px; margin: 0 auto; padding: 60px 20px;">
       <section>
         <div class="heading centered">
-          <h1 style="font-size: 32px;">Download Relay Pilot</h1>
-          <p class="paragraph m secondary">Android (ARM64) • v0.1.0-alpha</p>
+          <h1 style="font-size: 32px;">Download Relay</h1>
+          <p class="paragraph m secondary">Android • Closed beta • <span id="apkVersion">v0.1.0-beta.1</span></p>
         </div>
 
         <div style="background: var(--color-surface); border-radius: 16px; padding: 30px; margin-top: 30px; border: 1px solid var(--color-border-level-2);">
-            
-            <button class="button primary full-width" style="margin-bottom: 20px; opacity: 0.6; cursor: not-allowed;" disabled>
-                <i class="fa-solid fa-lock"></i> Pilot Is Currently Not Accepting Users
-            </button>
-            
-            <div style="margin-top: -10px; margin-bottom: 20px;">
-                <p class="paragraph s secondary" style="text-align: center; margin-bottom: 12px;">
-                    We are currently ensuring the pilot is ready for Durban.<br>
-                    Join the waitlist to be notified next.
-                </p>
-                
-                <form name="waitlist" method="POST" action="/success.html" data-netlify="true" style="display: flex; gap: 8px; justify-content: center;">
-                    <input type="hidden" name="form-name" value="waitlist" />
-                    <input type="email" name="email" placeholder="Enter your email" required 
-                           style="background: #0d1117; border: 1px solid #30363d; color: white; padding: 8px 12px; border-radius: 6px; font-size: 13px; width: 200px;">
-                    <button type="submit" class="button tertiary compact" style="border: 1px solid var(--color-accent); cursor: pointer;">Join</button>
-                </form>
-                </div>
 
-            <p class="paragraph s bold" style="margin-bottom: 8px;">Security Verification</p>
-            <p class="paragraph s secondary">Verify this SHA-256 checksum matches the file you download.</p>
-            
+            <!-- Hosted on GitHub Releases rather than served from this site:
+                 free, versioned CDN delivery that does not spend Netlify
+                 bandwidth, and no APK ever has to live in the git history. -->
+            <a class="button primary full-width" id="apkLink"
+               href="https://github.com/KarmaYama/relay-website/releases/download/v0.1.0-beta.1/relay-0.1.0-beta.1.apk"
+               style="margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                <i class="fa-solid fa-download"></i> Download for Android
+            </a>
+            <p class="paragraph s secondary" style="text-align:center; font-size: 11px; margin-bottom: 22px;">
+                <span id="apkSize">53 MB</span> &bull; Android 6.0 and up &bull;
+                <a href="https://github.com/KarmaYama/relay-website/releases" style="color: var(--color-accent);">All versions</a>
+            </p>
+
+            <p class="paragraph s bold" style="margin-bottom: 8px;">Verify your download</p>
+            <p class="paragraph s secondary">Check this SHA-256 against the file you downloaded. If it does not match, do not install it.</p>
+
             <div class="checksum-container">
                 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px;">
                     <div style="flex:1; min-width:0;">
                         <span style="color: #8b949e; font-size: 11px;">SHA256:</span><br>
-                        <span class="checksum-val" id="shaValue">2A946F462BA6D1B2F183A3EBCF9F220335648B43AA3C0A0FF958A9805D3615B9</span>
+                        <span class="checksum-val" id="shaValue">A2897C14DEB697AE712743C700A097E81B459299EDF1E6F744AEB1557769B818</span>
                     </div>
                     <button class="button tertiary compact" id="copySha" type="button" style="padding: 4px 8px; font-size: 11px; white-space:nowrap;">
                         <i class="fa-regular fa-copy"></i> Copy
@@ -123,19 +118,65 @@
             </p>
 
             <div class="meta-row">
-                <span>Published: 2025-12-12</span>
+                <span>Published: <span id="apkDate">2026-09-13</span></span>
                 <details>
                     <summary>View Changelog</summary>
                     <div style="margin-top: 8px; padding: 8px; background: rgba(0,0,0,0.2); border-radius: 4px;">
                         <ul style="padding-left: 16px; margin: 0;">
-                            <li>Initial Pilot Release</li>
-                            <li>Live GPS Tracking enabled</li>
-                            <li>Identity verification flow</li>
-                            <li>Authorization + capture payment flow</li>
+                            <li>First closed beta release</li>
+                            <li>Post a job and match with an ID-verified runner</li>
+                            <li>GPS tracking while a job is running, never in the background</li>
+                            <li>In-app chat and photo evidence kept as part of the job record</li>
+                            <li>Mark paid, then confirm received &mdash; both sides sign off</li>
+                            <li>File a dispute, or answer one within 24 hours</li>
+                            <li>SMS phone verification at sign-up</li>
                         </ul>
+                        <p style="margin: 8px 0 0; font-size: 11px;">
+                            Full notes on the
+                            <a href="https://github.com/KarmaYama/relay-website/releases" style="color: var(--color-accent);">releases page</a>.
+                        </p>
                     </div>
                 </details>
             </div>
+        </div>
+
+        <!-- Zero custody is the single claim most likely to be misunderstood,
+             and the one with real legal weight. It belongs above the fold on
+             the page where someone actually installs the app. -->
+        <div style="margin-top: 24px; padding: 20px; border-radius: 12px; border: 1px solid var(--color-border-level-2);">
+            <p class="paragraph s bold" style="margin-bottom: 6px;">
+                <i class="fa-solid fa-circle-info" style="color: var(--color-accent);"></i> Relay never holds your money
+            </p>
+            <p class="paragraph s secondary" style="margin: 0;">
+                You pay your runner directly. There is no wallet, no escrow and no held balance.
+                What Relay gives you is a verified identity on the other side of the job, a permanent
+                timestamped record of what happened, and a dispute process staffed by people.
+            </p>
+        </div>
+
+        <div style="margin-top: 16px; padding: 20px; border-radius: 12px; border: 1px solid var(--color-border-level-2);">
+            <p class="paragraph s bold" style="margin-bottom: 6px;">
+                <i class="fa-solid fa-triangle-exclamation" style="color: #fbbf24;"></i> Seeing &ldquo;Can't reach Relay&rdquo;?
+            </p>
+            <p class="paragraph s secondary" style="margin: 0;">
+                Turn off any VPN, particularly one that blocks ads. Those filter DNS for your whole
+                phone, while your browser quietly routes around them &mdash; so this site loads normally
+                and the app still cannot connect. Also set Private DNS to Automatic, or try switching
+                between Wi-Fi and mobile data.
+            </p>
+        </div>
+
+        <div style="margin-top: 16px; padding: 20px; border-radius: 12px; border: 1px solid var(--color-border-level-2);">
+            <p class="paragraph s bold" style="margin-bottom: 6px;">Not ready to install?</p>
+            <p class="paragraph s secondary" style="margin-bottom: 12px;">
+                Leave your email and we will tell you when the beta opens more widely.
+            </p>
+            <form name="waitlist" method="POST" action="/success.html" data-netlify="true" style="display: flex; gap: 8px;">
+                <input type="hidden" name="form-name" value="waitlist" />
+                <input type="email" name="email" placeholder="Enter your email" required
+                       style="background: #0d1117; border: 1px solid #30363d; color: white; padding: 8px 12px; border-radius: 6px; font-size: 13px; flex: 1; min-width: 0;">
+                <button type="submit" class="button tertiary compact" style="border: 1px solid var(--color-accent); cursor: pointer;">Join</button>
+            </form>
         </div>
 
         <div style="margin-top: 40px;">
@@ -165,6 +206,15 @@
                 <span class="step-number">4</span>
                 <p class="paragraph m" style="margin:0;">Open Relay and create your account.</p>
             </div>
+
+            <p class="paragraph s secondary" style="margin-top: 28px; font-size: 12px;">
+                By installing Relay you accept the
+                <a href="/eula" style="color: var(--color-accent);">EULA</a>,
+                <a href="/legal" style="color: var(--color-accent);">Terms of Service</a> and
+                <a href="/privacy" style="color: var(--color-accent);">Privacy Policy</a>.
+                Note in particular that job records are permanent and are not deleted when you
+                close your account.
+            </p>
         </div>
       </section>
     </main>
