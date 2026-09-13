@@ -26,3 +26,9 @@ dist-ssr
 
 # System
 .DS_Store
+
+# Android builds. APKs are ~50MB of already-compressed, undeltifiable data that
+# git keeps forever — they're published as GitHub Release assets instead, so the
+# repo never carries them. GitHub also hard-rejects any single file over 100MB.
+*.apk
+*.aab
