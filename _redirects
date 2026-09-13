@@ -1,0 +1,9 @@
+# Netlify redirects.
+# The Terms of Service live at /legal for historical reasons (existing inbound
+# links point there), but /terms is what people actually guess and type.
+/terms      /legal      301
+/tos        /legal      301
+/disputes   /legal#disputes   301
+/licence    /eula       301
+/license    /eula       301
+/cookies    /data-policy      301
