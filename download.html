@@ -113,28 +113,36 @@
                 <p id="copyMsg" style="display:none; color: #4ade80; font-size: 11px; margin: 0; text-align: right;">Copied.</p>
             </div>
 
-            <p class="paragraph s secondary" style="font-size: 11px; margin-top: 12px;">
-                <i class="fa-solid fa-certificate"></i> Signing certificate: <strong>Verifiable in Android install prompt</strong>
+            <p class="paragraph s bold" style="margin-top: 22px; margin-bottom: 8px;">Signing certificate</p>
+            <p class="paragraph s secondary">Every genuine Relay build is signed with the same key. Android will refuse to install an update signed by anyone else, so this fingerprint is the strongest check available.</p>
+
+            <div class="checksum-container">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px;">
+                    <div style="flex:1; min-width:0;">
+                        <span style="color: #8b949e; font-size: 11px;">SHA-256 (certificate):</span><br>
+                        <span class="checksum-val" id="certValue">3A:34:6B:E8:60:39:FE:8D:DA:A7:4B:F0:4A:27:C9:8E:B3:67:90:8E:E0:61:66:CB:24:5A:A7:8B:1E:72:DB:A8</span>
+                    </div>
+                    <button class="button tertiary compact" id="copyCert" type="button" style="padding: 4px 8px; font-size: 11px; white-space:nowrap;">
+                        <i class="fa-regular fa-copy"></i> Copy
+                    </button>
+                </div>
+                <p id="copyCertMsg" style="display:none; color: #4ade80; font-size: 11px; margin: 0; text-align: right;">Copied.</p>
+            </div>
+
+            <p class="paragraph s secondary" style="font-size: 11px; margin-top: 10px;">
+                Issued to Relay, Harare, Zimbabwe. To check it yourself:
+                <code style="font-size: 11px;">apksigner verify --print-certs relay.apk</code>
             </p>
 
             <div class="meta-row">
                 <span>Published: <span id="apkDate">2026-09-14</span></span>
                 <details>
                     <summary>View Changelog</summary>
-                    <div style="margin-top: 8px; padding: 8px; background: rgba(0,0,0,0.2); border-radius: 4px;">
-                        <ul style="padding-left: 16px; margin: 0;">
-                            <li>First closed beta release</li>
-                            <li>Post a job and match with an ID-verified runner</li>
-                            <li>GPS tracking while a job is running, never in the background</li>
-                            <li>In-app chat and photo evidence kept as part of the job record</li>
-                            <li>Mark paid, then confirm received &mdash; both sides sign off</li>
-                            <li>File a dispute, or answer one within 24 hours</li>
-                            <li>SMS phone verification at sign-up</li>
-                        </ul>
-                        <p style="margin: 8px 0 0; font-size: 11px;">
-                            Full notes on the
-                            <a href="https://github.com/KarmaYama/relay-website/releases" style="color: var(--color-accent);">releases page</a>.
-                        </p>
+                    <div id="changelogBody" style="margin-top: 8px; padding: 8px; background: rgba(0,0,0,0.2); border-radius: 4px;">
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Relay looks like Relay now.</strong> The app has been rebuilt on a single, shared visual language: proper typography, softer corners, and a calmer palette in place of hard black on hard white. This is the first version where the app's intended lettering actually appears on your screen at all.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Your email address and phone number can both be changed</strong>, from your profile. Changing either one asks you to confirm it again, because a number or address you have just swapped is not one you have proven.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Your profile now tells you the truth about what is verified.</strong> It used to guess, and could show a phone number as confirmed when it never had been.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>A What's new entry now lives in your account menu</strong>, so you can read this again whenever you like rather than catching it once.</p>
                     </div>
                 </details>
             </div>
@@ -225,36 +233,6 @@
     </footer>
   </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("copySha");
-      const val = document.getElementById("shaValue");
-      const msg = document.getElementById("copyMsg");
-
-      if (btn && val) {
-        btn.addEventListener("click", async () => {
-          try {
-            await navigator.clipboard.writeText(val.textContent.trim());
-            if (msg) { 
-                msg.textContent = "Copied.";
-                msg.style.display = "block"; 
-                setTimeout(() => msg.style.display = "none", 2000); 
-            }
-          } catch (_) {
-            const r = document.createRange();
-            r.selectNodeContents(val);
-            const sel = window.getSelection();
-            sel.removeAllRanges();
-            sel.addRange(r);
-            if (msg) {
-                msg.textContent = "Selected — press Ctrl+C";
-                msg.style.display = "block";
-                setTimeout(() => msg.style.display = "none", 3000);
-            }
-          }
-        });
-      }
-    });
-  </script>
+  <script src="js/download.js" defer></script>
 </body>
 </html>
