@@ -36,7 +36,7 @@
           <p class="paragraph s secondary" style="margin: 0;">
             <strong style="color: var(--color-text-primary);">The short version.</strong>
             To make Relay work, we verify who you really are — which means we collect your
-            government ID and a selfie. We record what happens on every job, and we keep those
+            government ID and a selfie, which we delete once it has been checked. We record what happens on every job, and we keep those
             records permanently, even if you delete your account. If someone commits fraud or
             theft, we can hand that record to the police. That permanence is the entire point of
             Relay: it is what makes cheating expensive. If you are not comfortable with it, please
@@ -104,6 +104,15 @@
           <p><strong style="color: var(--color-text-primary);">Job records are permanent and cannot be deleted</strong> — not by you, and not by us. A completed, cancelled or disputed job stays on file indefinitely. This is deliberate. Those records are the evidence trail that makes Relay's disputes and police referrals possible, and a platform where bad actors could erase their history would offer no protection at all.</p>
           <p>If you close your account, your profile is deactivated and you can no longer sign in, but <strong style="color: var(--color-text-primary);">your job history, disputes and verification record remain</strong>.</p>
           <p>If you are permanently banned for substantiated fraud, we keep a one-way cryptographic hash of your ID document so the same document cannot be used to open a new account. We keep the hash, not a readable copy of the document number.</p>
+
+          <p><strong style="color: var(--color-text-primary);">Your ID photograph and selfie are different, and we delete them.</strong> They exist so a person can check that your document is real and that it is you. Once that check is done, keeping the pictures protects nobody and puts you at risk if we are ever breached.</p>
+          <ul>
+            <li><strong style="color: var(--color-text-primary);">If you are approved</strong>, the photograph of your ID and your selfie are destroyed immediately.</li>
+            <li><strong style="color: var(--color-text-primary);">If you are rejected</strong>, they are kept for seven days so you can challenge the decision while the evidence still exists, then destroyed.</li>
+            <li><strong style="color: var(--color-text-primary);">If nobody ever reviews your submission</strong>, they are destroyed after thirty days.</li>
+          </ul>
+          <p>After that we keep only what the record needs: the type of document and the country that issued it, the last few digits of the number, a one-way hash of it, who reviewed it and when, and a fingerprint of each image. That fingerprint lets us prove what was checked without holding the thing that was checked.</p>
+          <p>This means we cannot give you back a copy of your own ID photograph, because we no longer have one. It also means a breach of Relay cannot expose it.</p>
 
           <h3 style="color: var(--color-text-primary);">8. Your rights</h3>
           <p>Relay operates under the <strong style="color: var(--color-text-primary);">Zimbabwe Data Protection Act [Chapter 11:12]</strong>, and where users or data are in South Africa, the <strong style="color: var(--color-text-primary);">Protection of Personal Information Act (POPIA)</strong>. Subject to those laws, you may ask us to:</p>
