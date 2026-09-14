@@ -1,8 +1,8 @@
 {
-  "version": "0.1.0-beta.3",
-  "build": 3,
+  "version": "0.1.0-beta.4",
+  "build": 4,
   "min_supported_build": 0,
-  "url": "https://github.com/KarmaYama/relay-website/releases/download/v0.1.0-beta.3/relay-0.1.0-beta.3.apk",
+  "url": "https://github.com/KarmaYama/relay-website/releases/download/v0.1.0-beta.4/relay-0.1.0-beta.4.apk",
   "page": "https://relay.africa/download",
-  "notes": "Connection failures now tell you what actually went wrong, and can be retried without restarting the app."
+  "notes": "Verify your account by email. You no longer have to wait for a text message to start using Relay. Open your profile and tap Verify next to your email address, and we will send you a code. Either your email or your phone number is enough to start posting jobs."
 }
