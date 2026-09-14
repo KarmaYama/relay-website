@@ -1,8 +1,8 @@
 {
-  "version": "0.1.0-beta.2",
-  "build": 2,
+  "version": "0.1.0-beta.3",
+  "build": 3,
   "min_supported_build": 0,
-  "url": "https://github.com/KarmaYama/relay-website/releases/download/v0.1.0-beta.2/relay-0.1.0-beta.2.apk",
+  "url": "https://github.com/KarmaYama/relay-website/releases/download/v0.1.0-beta.3/relay-0.1.0-beta.3.apk",
   "page": "https://relay.africa/download",
   "notes": "Connection failures now tell you what actually went wrong, and can be retried without restarting the app."
 }
