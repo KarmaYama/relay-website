@@ -816,3 +816,18 @@ section {
   border-radius: var(--radius-xs);
   color: var(--color-text-secondary);
 }
+
+/* Policy pages.
+ *
+ * Their section headings are h2 because they are sections of the document —
+ * jumping from h1 straight to h3 leaves anything reading the structure, from
+ * a screen reader to a search crawler, with a page that appears to have no
+ * sections at all.
+ *
+ * Visually they are the size they always were. The heading level says what a
+ * thing is; it should not also decide how loud it is. */
+.legal-page h2 {
+  font-size: var(--font-size-l);
+  line-height: var(--line-height-h3);
+  letter-spacing: var(--letter-spacing-h3);
+}

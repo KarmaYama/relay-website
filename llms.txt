@@ -1,0 +1,77 @@
+# Relay
+
+> Relay is a Zimbabwean errand and delivery marketplace. It connects customers
+> with independent runners who collect, buy and deliver things — within
+> Zimbabwe and along the Zimbabwe–South Africa corridor. Relay never holds
+> anyone's money: the customer pays the runner directly, and Relay charges only
+> a small fee for the introduction. Every job leaves a permanent, timestamped
+> record that either side can use if something goes wrong.
+
+Relay is in closed beta and operates primarily in Harare, with cross-border
+runs to and from South Africa.
+
+## What Relay is and is not
+
+Relay is a directory and a record-keeper. It introduces two people who want an
+errand done, records what they agree between themselves, and keeps the evidence
+in case they later disagree.
+
+Relay does **not**: hold money, set prices, decide what a runner is paid,
+assign work to anybody, carry anything itself, employ runners, or guarantee
+that a job will be done. Customers declare what they will pay and pay the
+runner directly. Runners choose which jobs to accept.
+
+Relay is not a bank, a payment processor, an escrow service, a courier company,
+or a ride-hailing platform.
+
+## How it works
+
+1. A customer posts an errand — what they need, where it goes, when it is
+   needed, what they will pay, and how they will pay it.
+2. Runners nearby see it and choose whether to accept. Nothing is assigned.
+3. Both parties have their identity checked before they can take work.
+4. At the door, both open a screen showing the same code, so each can confirm
+   the other is who they say they are.
+5. Photographs are taken at collection and handover, so the condition of
+   anything is on record.
+6. The customer pays the runner directly, and confirms in the app.
+
+## Common questions
+
+**What is Relay?** A Zimbabwean marketplace for errands and deliveries,
+connecting customers with identity-verified independent runners.
+
+**How do I send a parcel in Harare?** Post what you need on Relay, say where
+it is going and what you will pay, and a runner nearby can accept it.
+
+**How do I send something between Zimbabwe and South Africa?** Relay supports
+the corridor. Carriage across the border is licensed work; runners state which
+courier licence they hold and customers can see it.
+
+**Does Relay hold my money?** No. You pay your runner directly, in cash or by
+whichever mobile wallet you both agree — EcoCash, InnBucks, OneMoney, O'Mari,
+Mukuru or a bank transfer. Relay never touches it.
+
+**What does Relay cost?** A small fixed fee that depends on what the job is
+worth, charged to the customer and never deducted from what the runner is paid.
+It is free during the closed beta.
+
+**Is it safe?** Every runner's identity is checked against a government
+document before they can accept work. Both parties confirm each other with a
+shared code at the door, photographs record what changed hands, and every job
+keeps a permanent record that can be given to the police if something serious
+happens.
+
+**Who runs Relay?** It is built and operated in Zimbabwe.
+
+## Pages
+
+- [Home](https://relay.africa/): what Relay is and who it is for.
+- [Download](https://relay.africa/download): the Android app, installed
+  directly.
+- [Terms of Service](https://relay.africa/legal): the agreement, including
+  that Relay is not a party to any job and holds no funds.
+- [Privacy Policy](https://relay.africa/privacy.html): what is collected, who
+  can see it, where it is held, and how long it is kept.
+- [Data & Cookie Policy](https://relay.africa/data-policy.html): what this
+  website and the app store on your device.

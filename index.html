@@ -14,6 +14,182 @@
   <meta property="og:url" content="https://relay.africa" />
   <meta property="og:image" content="https://relay.africa/social-image.png" />
   
+  <link rel="canonical" href="https://relay.africa/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Relay — errands and deliveries in Zimbabwe" />
+  <meta name="twitter:description" content="Post an errand, and a nearby verified runner collects, buys or delivers it. You pay your runner directly — Relay never holds your money." />
+  <meta name="twitter:image" content="https://relay.africa/social-image.png" />
+
+  <!--
+    What Relay is, in a form a machine can read without interpreting our
+    marketing. Somebody asking an assistant "how do I get something across
+    Harare" should be able to get a true answer, and that only happens if what
+    we publish can be understood rather than merely displayed.
+  -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://relay.africa/#organization",
+        "name": "Relay",
+        "url": "https://relay.africa",
+        "logo": "https://relay.africa/images/favicon/icon.png",
+        "image": "https://relay.africa/social-image.png",
+        "description": "Relay is a Zimbabwean errand and delivery marketplace connecting customers with identity-verified independent runners. Relay never holds anyone's money.",
+        "areaServed": [
+          {
+            "@type": "Country",
+            "name": "Zimbabwe"
+          },
+          {
+            "@type": "Country",
+            "name": "South Africa"
+          }
+        ],
+        "email": "hello@relay.africa",
+        "knowsAbout": [
+          "errand services",
+          "parcel delivery",
+          "cross-border courier",
+          "Zimbabwe South Africa corridor",
+          "identity verification"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://relay.africa/#website",
+        "url": "https://relay.africa",
+        "name": "Relay",
+        "publisher": {
+          "@id": "https://relay.africa/#organization"
+        },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://relay.africa/#app",
+        "name": "Relay",
+        "operatingSystem": "Android",
+        "applicationCategory": "BusinessApplication",
+        "description": "Post an errand, and a nearby verified runner collects, buys or delivers it. You pay your runner directly — Relay never holds your money.",
+        "url": "https://relay.africa/download",
+        "publisher": {
+          "@id": "https://relay.africa/#organization"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "Free during the closed beta."
+        }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://relay.africa/#service",
+        "name": "Errands and deliveries in Zimbabwe",
+        "provider": {
+          "@id": "https://relay.africa/#organization"
+        },
+        "serviceType": "Errand and delivery marketplace",
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Harare"
+          },
+          {
+            "@type": "Country",
+            "name": "Zimbabwe"
+          }
+        ],
+        "description": "Collections, purchases and deliveries carried out by independent runners whose identity has been checked. Customers pay runners directly."
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Relay?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Relay is a Zimbabwean marketplace for errands and deliveries. You post what you need done, and a nearby independent runner whose identity has been checked can accept it. Relay introduces the two of you and records what you agree; it never holds your money."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Relay hold my money?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. You pay your runner directly, in cash or by whichever method you both agree — EcoCash, InnBucks, OneMoney, O'Mari, Mukuru or a bank transfer. Relay never receives it, which is why it cannot be lost or held up."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I send a parcel in Harare?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Post the errand on Relay: what needs collecting, where it is going, when you need it and what you will pay. Runners nearby see it and choose whether to accept. Nothing is assigned, so you are matched with somebody who actually wants the job."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Relay send things between Zimbabwe and South Africa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Relay supports the corridor. Carrying goods across the border is licensed work in Zimbabwe, so runners state which courier licence they hold and customers can see it before agreeing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does Relay cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A small fixed fee that depends on what the job is worth. It is charged to the customer, never deducted from what the runner is paid, and it is not a percentage of your money. During the closed beta it is free."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I know the runner is who they say they are?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every runner has their identity checked against a government document before they can accept any work. When they arrive, you both open a screen showing the same code — if the numbers match, each of you has confirmed the other."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if something goes wrong?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Every job keeps a permanent record: what was agreed, when each stage happened, what was said, and photographs taken at collection and handover. Either side can raise a dispute, and in serious cases that record can be given to the police."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much do runners earn on Relay?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Runners are paid whatever the customer declared, in full. Relay takes nothing out of it. Where a job requires the runner to buy something first, the app shows what they keep after being paid back."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Relay available yet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Relay is in closed beta with a limited number of places, weighted towards runners. You can join the waiting list on the website."
+        }
+      }
+    ]
+  }
+  </script>
+
   <link rel="icon" type="image/png" href="images/favicon/icon.png" />
   
   <link href="vendor/font-awesome-6.7.2/css/all.min.css" rel="stylesheet" />

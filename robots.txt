@@ -1,0 +1,45 @@
+# relay.africa
+#
+# Everything here is public and meant to be read, including by the crawlers
+# that answer questions on someone else's behalf. A person asking "how do I
+# get something to Bulawayo" should be able to find a true answer, and that
+# is only possible if what we publish can be read.
+
+User-agent: *
+Allow: /
+
+# Assistants that cite sources. Explicitly welcomed rather than left to
+# infer it from silence — several of them treat an absent rule as a reason
+# to stay away.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# The success page is what you land on after joining the waiting list. It
+# says nothing useful out of context and should not be a search result.
+Disallow: /success.html
+
+Sitemap: https://relay.africa/sitemap.xml
