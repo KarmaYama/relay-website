@@ -1,8 +1,8 @@
 {
   "version": "0.1.0-beta.6",
-  "build": 6,
+  "build": 7,
   "min_supported_build": 0,
-  "url": "https://github.com/KarmaYama/relay-website/releases/download/v0.1.0-beta.6/relay-0.1.0-beta.6.apk",
+  "url": "https://github.com/KarmaYama/relay-website/releases/download/v0.1.0-beta.6+7/relay-0.1.0-beta.6.apk",
   "page": "https://relay.africa/download",
-  "notes": "The biggest release so far. Most of it is about one thing: two strangers meeting to move something that matters, and having enough between them to trust each other."
+  "notes": "A fast follow-up to beta 6, from a day of real testing. Three things were losing people's work, and one thing everybody eventually needs was missing."
 }
