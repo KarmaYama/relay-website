@@ -79,7 +79,7 @@
       <section>
         <div class="heading centered">
           <h1 style="font-size: 32px;">Download Relay</h1>
-          <p class="paragraph m secondary">Android • Closed beta • <span id="apkVersion">v0.1.0-beta.5</span></p>
+          <p class="paragraph m secondary">Android • Closed beta • <span id="apkVersion">v0.1.0-beta.6</span></p>
         </div>
 
         <div style="background: var(--color-surface); border-radius: 16px; padding: 30px; margin-top: 30px; border: 1px solid var(--color-border-level-2);">
@@ -88,12 +88,12 @@
                  free, versioned CDN delivery that does not spend Netlify
                  bandwidth, and no APK ever has to live in the git history. -->
             <a class="button primary full-width" id="apkLink"
-               href="https://github.com/KarmaYama/relay-website/releases/download/v0.1.0-beta.5/relay-0.1.0-beta.5.apk"
+               href="https://github.com/KarmaYama/relay-website/releases/download/v0.1.0-beta.6/relay-0.1.0-beta.6.apk"
                style="margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 8px;">
                 <i class="fa-solid fa-download"></i> Download for Android
             </a>
             <p class="paragraph s secondary" style="text-align:center; font-size: 11px; margin-bottom: 22px;">
-                <span id="apkSize">55 MB</span> &bull; Android 6.0 and up &bull;
+                <span id="apkSize">56 MB</span> &bull; Android 6.0 and up &bull;
                 <a href="https://github.com/KarmaYama/relay-website/releases" style="color: var(--color-accent);">All versions</a>
             </p>
 
@@ -104,7 +104,7 @@
                 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px;">
                     <div style="flex:1; min-width:0;">
                         <span style="color: #8b949e; font-size: 11px;">SHA256:</span><br>
-                        <span class="checksum-val" id="shaValue">7840A61C5B8FA9CA692F9A99F2D061B633FF378ED94ED325B870C9E41BC47F5D</span>
+                        <span class="checksum-val" id="shaValue">837D428630319C00B375F371BF7AEE7E647F1AA53AB579E36128653F79F5ECC0</span>
                     </div>
                     <button class="button tertiary compact" id="copySha" type="button" style="padding: 4px 8px; font-size: 11px; white-space:nowrap;">
                         <i class="fa-regular fa-copy"></i> Copy
@@ -135,21 +135,42 @@
             </p>
 
             <div class="meta-row">
-                <span>Published: <span id="apkDate">2026-09-14</span></span>
+                <span>Published: <span id="apkDate">2026-09-15</span></span>
                 <details>
                     <summary>View Changelog</summary>
                     <div id="changelogBody" style="margin-top: 8px; padding: 8px; background: rgba(0,0,0,0.2); border-radius: 4px;">
-                        <p style="margin:0 0 8px;font-size:12px;"><strong>Show a photo of what you want.</strong> When you post a job you can attach up to three pictures. For anything bought across a border this is often the only reliable description, because "the blue ones" is how the wrong item gets bought.</p>
-                        <p style="margin:0 0 8px;font-size:12px;"><strong>You can finally see the photos on a job.</strong> Pictures taken at pickup and drop-off were being stored and never shown to anyone. Now both sides can open them.</p>
-                        <p style="margin:0 0 8px;font-size:12px;"><strong>Every job shows what happened and when.</strong> Posted, collected, marked paid, confirmed, with times. And which route it runs, including the border it crosses. All of this was already being recorded and none of it was visible, which left people arguing about timings the app already knew.</p>
-                        <p style="margin:0 0 8px;font-size:12px;"><strong>Relay looks like Relay now.</strong> The app has been rebuilt on one visual language: proper typography, softer corners, and a calmer palette in place of hard black on hard white.</p>
-                        <p style="margin:0 0 8px;font-size:12px;"><strong>Unfinished job posts are kept.</strong> Leave the screen to check an address and come back to find everything still there. Kept on your phone for a week, and cleared once you post.</p>
-                        <p style="margin:0 0 8px;font-size:12px;"><strong>Runners see work near them</strong>, instead of every job in the country.</p>
-                        <p style="margin:0 0 8px;font-size:12px;"><strong>Your history is complete.</strong> Jobs waiting on a confirmation used to appear on no screen at all. Both customers and runners now see everything that is finished, newest first.</p>
-                        <p style="margin:0 0 8px;font-size:12px;"><strong>Your email address and phone number can both be changed</strong>, from your profile. Changing either one asks you to confirm it again, because a number or address you have just swapped is not one you have proven.</p>
-                        <p style="margin:0 0 8px;font-size:12px;"><strong>Your profile now tells you the truth about what is verified.</strong> It used to guess, and could show a phone number as confirmed when it never had been. Worth a look.</p>
-                        <p style="margin:0 0 8px;font-size:12px;"><strong>Relay now tells you when there's a new version</strong>, and checks on its own rather than only when you restart it. There's a Check for updates option in your account menu too.</p>
-                        <p style="margin:0 0 8px;font-size:12px;"><strong>A What's new entry now lives in your account menu</strong>, so you can read this again rather than catching it once.</p>
+                        <p style="margin:0 0 8px;font-size:12px;">The biggest release so far. Most of it is about one thing: two strangers meeting to move something that matters, and having enough between them to trust each other.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Show your ID at the door.</strong> When a runner arrives, both of you open a screen showing the same code. They hold theirs up, you hold yours up, the numbers match. Two seconds, and each of you knows the other is who they say they are — which is the moment both sides have always been most uneasy about.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Photograph it when it changes hands.</strong> Relay now asks for a picture when a runner collects, again when they hand over, and when you receive. If anyone ever questions the condition of something, that is what settles it. Every prompt can be declined and the job still finishes.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Where a photo was taken no longer travels with it.</strong> Phones quietly write the exact coordinates into every picture. A photo taken at your gate carried your address. That is now removed before anything is stored.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Relay speaks up at the right moments.</strong> Short notes in the conversation when a job is taken, collected, paid and confirmed — including, once and only once, the plain statement that Relay never holds the money and does not take a side.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Either of you can ask the other for a photo</strong>, and whether they answer is recorded either way.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Everything on a job is in one place.</strong> What happened, when, what each person was asked and what they did about it.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>If something goes seriously wrong, the record is worth something.</strong> What gets handed to the police used to be two lines — when a job was posted and what state it was in. It now contains everything that actually happened, in order, with who did what, what each person was asked and whether they answered.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Identity documents are destroyed once they have been checked</strong>, rather than kept. If a breach ever happens, they will not be in it.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Runners are told that carrying goods is licensed work</strong>, which class covers what, and that the cheapest costs fifty dollars once. Relay does not require one and does not check it.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Say what you actually need.</strong> A job can now carry a name, when you need it by, who is receiving it and how to reach them, what kind of errand it is, how big it is, and whether the runner is spending their own money on your behalf. All of it used to be negotiated by message on every single job.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Say how you will pay.</strong> Cash, EcoCash, InnBucks, OneMoney, O'Mari, Mukuru or a bank transfer. Runners see it before they accept, so nobody agrees to a job and then finds out they cannot be paid for it. Every job used to say cash whether it was true or not.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Pick a place on a map.</strong> Search for it, drop a pin, or tap once to use where you are. Typing an address only ever worked for addresses a lookup service had heard of, which here is not most of them.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Pay in dollars or rand.</strong> Chosen on the amount itself, so what you are quoted is what you pay.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Relay's fee is free during the beta</strong>, and the app says so in words instead of showing you a confusing zero. When it does start, it depends on what the job is worth — it is never a cut of your money and never comes out of what the runner is paid.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Runners can read a job before taking it.</strong> The full request, both addresses, what it pays, and a way back to the list. Accepting used to be the only thing a job card could do.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Runners can hand back a job they cannot do.</strong> Before, the only options were raising a dispute against a customer who had done nothing wrong, or not turning up. The job goes back to the list for somebody else.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Messages show whether they arrived.</strong> One tick sent, two delivered, two coloured read.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Your home screen can be tidied.</strong> Clear finished jobs off it. Nothing is deleted — your full history is untouched.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>The beta is capped.</strong> Ten places, weighted towards runners, because every runner is checked by a person and a marketplace nobody can be matched on is worse than one nobody can join. If you are turned away, the waiting list on the website is real.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Runners see what they will actually keep.</strong> A job paying 45 that costs 40 in groceries earns 5, and the app was showing 45. Every figure is now net of what you have to spend.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Going on and off duty works.</strong> It used to switch itself back a second or two later, which was a real fault and not your connection.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Every screen updates itself</strong> when you come back to it, instead of waiting for you to pull it down.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Everything reads in plain English.</strong> A job is "waiting for a runner" or "needs your confirmation", not a code word, and every card says what happens next.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>People are told apart.</strong> Everyone now has their own colour and initials, so two people in a conversation no longer look identical.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>The verification screen is better in every way.</strong> Guidance before the camera opens, both photographs taken rather than chosen from your gallery, and the app refuses one nobody could read. It also tells you where your review actually stands and, if it was sent back, why.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>A job posted for 10 was being recorded as 22.50.</strong> The app was adding a delivery charge of its own invention on top of the price you agreed. The figure on a job is now the figure you typed and nothing else — and for a service whose whole promise is that the money is between you and your runner, overstating what changed hands was the worst thing it could have got wrong.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Jobs and history appeared to vanish.</strong> Everyone using Relay was sharing a single allowance of requests between them, so two people using the app at once was enough for a deliberate tap to be refused — and a refused list looks exactly like an empty one.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Customers could not be verified at all.</strong> The option existed and did nothing, which meant nobody could post a higher-value job.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>A runner's earnings page did not work.</strong> It failed to load every time, and beside it sat a button offering to pay out money Relay has never held. Earnings are now every job you have finished and what you kept on each.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Photos on a job showed nothing rather than saying why.</strong> A job with no photographs and a job whose photographs would not load looked identical.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>A few smaller things:</strong> the Back button on the job form is no longer hidden under the system bar, the information icon beside the fee now explains the fee, job cards no longer show an internal reference code, and several figures that were quietly wrong are now right and tested to stay right.</p>
                     </div>
                 </details>
             </div>
