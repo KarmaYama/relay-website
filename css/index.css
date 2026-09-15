@@ -742,6 +742,13 @@ section {
   align-items: center;
   display: flex;
   cursor: pointer;
+  /* The browser draws its own triangle on a summary, which would sit next to
+     the chevron and read as two controls for one row. */
+  list-style: none;
+}
+
+.accordion-toggle::-webkit-details-marker {
+  display: none;
 }
 
 .accordion-toggle:hover {
@@ -750,7 +757,9 @@ section {
 
 .accordion-chevron {
   margin-left: auto;
+  padding-left: 16px;
   color: var(--color-text-tertiary);
+  transition: transform 0.2s ease;
 }
 
 [open] .accordion-chevron {
