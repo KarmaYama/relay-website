@@ -44,13 +44,57 @@
         <div class="heading centered">
           <h1 style="font-size: 30px;" class="balanced">Someone has sent you a job</h1>
           <p class="paragraph m secondary balanced">
-            A runner has written down an errand they agreed with you. Install
-            Relay to see exactly what they are offering — and who they are —
-            before you agree to anything.
+            Here is what they have written down. Get Relay to accept it —
+            nothing is agreed until you do.
           </p>
         </div>
 
-        <div style="background: var(--color-surface); border-radius: 16px; padding: 24px; margin-top: 28px; border: 1px solid var(--color-border-level-2);">
+        <!--
+          The job itself, filled in from Relay once the page loads.
+
+          Hidden to begin with and revealed only when there is something real to
+          put in it, so a slow connection shows the fallback below rather than a
+          row of empty labels. If Relay cannot be reached at all, or the code has
+          expired, this never appears and the fallback stands.
+        -->
+        <div id="inviteJob" hidden
+             style="background: var(--color-surface); border-radius: 16px; padding: 24px; margin-top: 28px; border: 1px solid var(--color-border-level-2);">
+
+          <div style="display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;">
+            <p id="runnerName" style="font-size: 20px; font-weight: 700; margin: 0; color: var(--color-text-primary);"></p>
+            <span id="runnerVerified" hidden class="paragraph s" style="color: var(--color-accent); margin: 0;">
+              <i class="fa-solid fa-circle-check"></i> Identity checked by Relay
+            </span>
+          </div>
+          <p id="runnerRecord" hidden class="paragraph s secondary" style="margin: 4px 0 0 0;"></p>
+
+          <hr style="border: none; border-top: 1px solid var(--color-border-level-2); margin: 18px 0;" />
+
+          <p class="paragraph s secondary" style="margin: 0 0 4px 0;">What they will do</p>
+          <p id="jobDescription" style="margin: 0 0 16px 0; color: var(--color-text-primary);"></p>
+
+          <p class="paragraph s secondary" style="margin: 0 0 4px 0;">From</p>
+          <p id="jobFrom" style="margin: 0 0 16px 0; color: var(--color-text-primary);"></p>
+
+          <p class="paragraph s secondary" style="margin: 0 0 4px 0;">To</p>
+          <p id="jobTo" style="margin: 0 0 16px 0; color: var(--color-text-primary);"></p>
+
+          <p class="paragraph s secondary" style="margin: 0 0 4px 0;">You pay them</p>
+          <p id="jobAmount" style="margin: 0; font-size: 22px; font-weight: 700; color: var(--color-text-primary);"></p>
+
+          <p class="paragraph s secondary" style="margin-top: 18px;">
+            Nothing is agreed yet. Get Relay to accept it — and you can change
+            the amount if the two of you remember it differently.
+          </p>
+        </div>
+
+        <!--
+          What stands when the job cannot be shown: no code in the address, an
+          expired one, Relay unreachable, or JavaScript turned off. Visible by
+          default for exactly that reason.
+        -->
+        <div id="inviteFallback"
+             style="background: var(--color-surface); border-radius: 16px; padding: 24px; margin-top: 28px; border: 1px solid var(--color-border-level-2);">
           <p class="paragraph s secondary" style="margin: 0 0 6px 0;">Your code</p>
           <p id="inviteCode"
              style="font-family: var(--font-mono); font-size: 32px; font-weight: 800; letter-spacing: 6px; margin: 0; color: var(--color-text-primary);">
