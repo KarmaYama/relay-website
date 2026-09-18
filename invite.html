@@ -9,21 +9,36 @@
        between two people, and the code in the address is the only thing keeping
        it private. -->
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="icon" type="image/png" href="images/favicon/icon.png" />
-  <link href="vendor/font-awesome-6.7.2/css/all.min.css" rel="stylesheet" />
-  <link href="css/index.css" rel="stylesheet" type="text/css" />
-  <link href="css/mobile.css" rel="stylesheet" type="text/css" />
-  <script src="js/invite.js" type="text/javascript" defer></script>
+  <!--
+    Every path on this page is absolute, and has to be.
+
+    This is the one page served from an address it is not stored at: a job link
+    is /j/<code>, rewritten to this file with the address left alone so the code
+    stays readable and shareable. That means the browser resolves relative paths
+    against /j/, not the site root — so "css/index.css" is fetched from
+    /j/css/index.css, which does not exist.
+
+    Every stylesheet, the script and every link failed that way at once, and the
+    result was not a broken-looking page but a plain one: unstyled text, and no
+    job details either, because the script that fetches them never ran. The page
+    still said something true, which is exactly why it could be wrong for a
+    while without looking wrong.
+  -->
+  <link rel="icon" type="image/png" href="/images/favicon/icon.png" />
+  <link href="/vendor/font-awesome-6.7.2/css/all.min.css" rel="stylesheet" />
+  <link href="/css/index.css" rel="stylesheet" type="text/css" />
+  <link href="/css/mobile.css" rel="stylesheet" type="text/css" />
+  <script src="/js/invite.js" type="text/javascript" defer></script>
 </head>
 
 <body>
   <div class="page-container">
     <header class="nav-container">
-      <a href="index.html" class="nav-brand">
+      <a href="/index.html" class="nav-brand">
         <span style="font-weight: 800; font-size: 22px; letter-spacing: -0.5px; color: var(--color-text-primary);">RELAY</span>
       </a>
       <nav class="nav-menu">
-        <a href="index.html" class="nav-link">What is Relay?</a>
+        <a href="/index.html" class="nav-link">What is Relay?</a>
       </nav>
     </header>
 
@@ -105,7 +120,7 @@
           </p>
         </div>
 
-        <a class="button primary full-width" href="download.html"
+        <a class="button primary full-width" href="/download.html"
            style="margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 8px;">
           <i class="fa-brands fa-android"></i> Get Relay
         </a>
@@ -153,9 +168,9 @@
         </div>
         <div>
           <div class="link-list">
-            <a href="legal.html" class="ui s">Terms of Service</a>
-            <a href="privacy.html" class="ui s">Privacy Policy</a>
-            <a href="index.html" class="ui s">What is Relay?</a>
+            <a href="/legal.html" class="ui s">Terms of Service</a>
+            <a href="/privacy.html" class="ui s">Privacy Policy</a>
+            <a href="/index.html" class="ui s">What is Relay?</a>
           </div>
         </div>
       </div>
