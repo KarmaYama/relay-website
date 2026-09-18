@@ -80,7 +80,7 @@
       <section>
         <div class="heading centered">
           <h1 style="font-size: 32px;">Download Relay</h1>
-          <p class="paragraph m secondary">Android • Closed beta • <span id="apkVersion">v0.1.0-beta.6</span></p>
+          <p class="paragraph m secondary">Android • Closed beta • <span id="apkVersion">v0.1.0-beta.7</span></p>
         </div>
 
         <div style="background: var(--color-surface); border-radius: 16px; padding: 30px; margin-top: 30px; border: 1px solid var(--color-border-level-2);">
@@ -89,12 +89,12 @@
                  free, versioned CDN delivery that does not spend Netlify
                  bandwidth, and no APK ever has to live in the git history. -->
             <a class="button primary full-width" id="apkLink"
-               href="https://github.com/KarmaYama/relay-website/releases/download/v0.1.0-beta.6+7/relay-0.1.0-beta.6.apk"
+               href="https://github.com/KarmaYama/relay-website/releases/download/v0.1.0-beta.7/relay-0.1.0-beta.7.apk"
                style="margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 8px;">
                 <i class="fa-solid fa-download"></i> Download for Android
             </a>
             <p class="paragraph s secondary" style="text-align:center; font-size: 11px; margin-bottom: 22px;">
-                <span id="apkSize">56 MB</span> &bull; Android 6.0 and up &bull;
+                <span id="apkSize">57 MB</span> &bull; Android 6.0 and up &bull;
                 <a href="https://github.com/KarmaYama/relay-website/releases" style="color: var(--color-accent);">All versions</a>
             </p>
 
@@ -105,7 +105,7 @@
                 <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px;">
                     <div style="flex:1; min-width:0;">
                         <span style="color: #8b949e; font-size: 11px;">SHA256:</span><br>
-                        <span class="checksum-val" id="shaValue">3454CEB3586E8B7BECB1032A865F7BB5A3DC13E99B8D061C647E1DB1A0881703</span>
+                        <span class="checksum-val" id="shaValue">4CA8FC07D47F4AD01E272748A339B2854DDC1710C6E6FC1B2E950174A8474D68</span>
                     </div>
                     <button class="button tertiary compact" id="copySha" type="button" style="padding: 4px 8px; font-size: 11px; white-space:nowrap;">
                         <i class="fa-regular fa-copy"></i> Copy
@@ -136,23 +136,30 @@
             </p>
 
             <div class="meta-row">
-                <span>Published: <span id="apkDate">2026-09-15</span></span>
+                <span>Published: <span id="apkDate">2026-09-18</span></span>
                 <details>
                     <summary>View Changelog</summary>
                     <div id="changelogBody" style="margin-top: 8px; padding: 8px; background: rgba(0,0,0,0.2); border-radius: 4px;">
-                        <p style="margin:0 0 8px;font-size:12px;">A fast follow-up to beta 6, from a day of real testing. Three things were losing people's work, and one thing everybody eventually needs was missing.</p>
-                        <p style="margin:0 0 8px;font-size:12px;"><strong>Forgotten your password?</strong> There is now a way back in. Ask for a code, it arrives at the email address on your account, and you choose a new password. The code lasts fifteen minutes and gives you five tries.</p>
-                        <p style="margin:0 0 8px;font-size:12px;"><strong>Change your password from inside the app.</strong> Under Account. It asks for your current one first — a phone left unlocked on a table should not be enough for somebody to lock you out of Relay.</p>
-                        <p style="margin:0 0 8px;font-size:12px;">Either way, every device signed in to your account is signed out. A new password is worth nothing if whoever you are worried about simply stays signed in on the phone they already have.</p>
-                        <p style="margin:0 0 8px;font-size:12px;"><strong>Photos were being accepted and then lost.</strong> A picture would upload, look fine, and be gone a few hours later. It had been written somewhere temporary the whole time. This is fixed, but pictures taken before today are not recoverable, and we would rather say so than let you find out.</p>
-                        <p style="margin:0 0 8px;font-size:12px;"><strong>Your job disappeared the moment a runner started it.</strong> It was on the home screen saying "On the way" and in neither My Jobs nor History, so there was nowhere to open it. Every job now appears somewhere, always.</p>
-                        <p style="margin:0 0 8px;font-size:12px;"><strong>"Too many requests" while doing nothing unusual.</strong> Relay was asking itself the same question twice at once. It now asks far less often.</p>
-                        <p style="margin:0 0 8px;font-size:12px;"><strong>Steps of a job stopped being recorded halfway through.</strong> Delivery ticks did not stick, read receipts did not stick, a photo never attached itself to the message it answered, and a step could be raised but never marked answered or declined. None of it looked like a failure, which is why it lasted.</p>
-                        <p style="margin:0 0 8px;font-size:12px;"><strong>Show my ID no longer needs anyone else to be there.</strong> Runners are asked who they are by gate guards, receptionists and shopkeepers far more often than by the customer — and none of them have Relay. Your ID is now always available from your own menu, with no job and no signal needed. The matching code still appears underneath when there is someone to check it with.</p>
-                        <p style="margin:0 0 8px;font-size:12px;"><strong>Jobs with nobody behind them are cleared away.</strong> When somebody leaves Relay, the jobs they posted used to stay in the list. A runner could take one, travel to it, and find no customer and nobody to pay them. Work that has already started is deliberately left alone.</p>
-                        <p style="margin:0 0 8px;font-size:12px;"><strong>Accounts nobody has used for a month can be closed.</strong> An abandoned account still holds a name, a phone number and sometimes an ID document, with nobody watching it. Where somebody has been part of a job, the account closes but the record stays — a disagreement months later has to be decided on something.</p>
-                        <p style="margin:0 0 8px;font-size:12px;"><strong>Guessing somebody's password gets slower and slower.</strong> Five tries at full speed, which covers any normal mistype, and after that a wait that grows to fifteen minutes. Getting it right clears it instantly, and so does leaving it an hour. Relay will never lock you out of your own account for this — a lock would let anyone who knows your username shut you out on purpose, so the worst anybody can do is make you wait.</p>
-                        <p style="margin:0 0 8px;font-size:12px;">Keywords: password reset, sign-out everywhere, photo storage, job visibility, request limits, delivery ticks, ID badge, dormant accounts, sign-in attempts</p>
+                        <p style="margin:0 0 8px;font-size:12px;">The release where a runner stops waiting to be found.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Bring your own customer.</strong> Most work here does not start with a customer looking for a runner — it starts with a runner who already knows somebody and has already agreed the job. Relay had no way to take that, so it stayed on WhatsApp, and so did everything that makes it safe.</p>
+                        <p style="margin:0 0 8px;font-size:12px;">Now a runner writes down what the two of them agreed and sends a link. The customer taps it and sees the job: who the runner is, that Relay checked their ID, what they have done, the errand, and what it costs — before being asked to sign up for anything. If they do not have Relay yet, the link still shows them all of it and offers the app.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>You write down the amount. They decide it.</strong> The runner says what they believe was agreed. It is not a job until the customer has seen that figure and accepted it, and they can change it if the two of you remember it differently.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>An Archive.</strong> Finished jobs can be put away so your lists stay readable — customer or runner. Nothing is deleted, ever: a job record is what a disagreement is settled with. It follows your account, so archiving on one phone holds on the next.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Nothing you do is held up any more.</strong> Reading your own jobs, history, disputes, messages or photos is never refused, whoever you are. The limits that used to do that protected nothing — you can only see your own records anyway — and they were the reason screens said "too many requests" while you sat there doing nothing unusual.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Photographs appear where they were asked for.</strong> Somebody asks you for a photo in the conversation, you take one, and it now appears there. Before, it went somewhere you had to go and find.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Show my ID says who the other person is.</strong> It showed your own name and mark and left the other party as a bare name — so you could finish an entire job without ever being told the stranger at your gate had their government ID checked by a person. It now says that, along with how many jobs they have finished and their rating.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Relay explains itself.</strong> Every screen that welcomed you used to point at buttons. They now say what the buttons are for, and why any of this beats carrying on in a WhatsApp group.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Your email address can be changed</strong> from the same place as your phone number, which is where the app already said it would be.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Messages disappearing and coming back.</strong> A conversation asks Relay for itself from several places at once, and whichever answer arrived last was being shown — which is not the same as the answer to the last question. A message you had just sent could be wiped by a reply to a question asked before you typed it.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>A thread that could not be reached said "No messages yet."</strong> Identical to never having spoken to the person carrying your parcel. It now says what happened.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Show my ID never worked.</strong> Not once, for anybody, on any request. The code the two of you compare was generated and then not kept, so the card had nothing to show. Jobs affected by this are repaired the first time somebody opens the card.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>A job stayed open after Relay had already decided it.</strong> Raising a dispute, getting a ruling and a warning, and then watching the job sit in your active list for ever, already settled.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>A job could be rated again and again</strong>, and every rating counted. One per job now — though the same runner on a new job is new work and gets its own.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>A verification code arrived looking like a telephone number</strong> in Gmail and on iPhones — blue, underlined, and opening the dialler when you tapped it to copy it.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Jobs with nobody behind them are cleared away.</strong> When somebody leaves Relay, the jobs they posted used to stay in the list. A runner could take one, travel to it, and find no customer and nobody to pay them. Work already started is left alone.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Accounts nobody has used for a month can be closed.</strong> An abandoned account still holds a name, a number and sometimes an ID document with nobody watching it. Where somebody took part in a job, the account closes and the record stays.</p>
+                        <p style="margin:0 0 8px;font-size:12px;"><strong>Guessing somebody's password gets slower and slower.</strong> Five tries at full speed, then a wait that grows. Relay will never lock you out of your own account for this — the worst anybody can do is make you wait.</p>
+                        <p style="margin:0 0 8px;font-size:12px;">Keywords: job invitations, deep links, archive, request limits, chat, photos, ID card, ratings, dispute resolution, dormant accounts</p>
                     </div>
                 </details>
             </div>
