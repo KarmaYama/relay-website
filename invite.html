@@ -104,6 +104,33 @@
         </div>
 
         <!--
+          The way in, for somebody who already has Relay.
+
+          Android only opens a link in an app once it has verified that the
+          link and the app belong together, and it decides that at install
+          time. Anybody who installed Relay before job links existed will
+          therefore land here in a browser with the app sitting on their home
+          screen — so there has to be a way across that does not depend on that
+          verification having happened.
+
+          The button uses a scheme the app claims outright, which needs no
+          verification at all. The code stays beside it because the button
+          cannot be relied on either: nothing happens if Relay is not installed,
+          and a code typed in by hand always works.
+        -->
+        <div id="inviteOpen" hidden style="margin-top: 20px;">
+          <a id="inviteOpenLink" class="button secondary full-width" href="#"
+             style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in Relay
+          </a>
+          <p class="paragraph s secondary" style="margin-top: 10px; text-align: center;">
+            Already have Relay? Open it, or enter
+            <strong id="inviteOpenCode" style="font-family: var(--font-mono); letter-spacing: 2px; color: var(--color-text-primary);"></strong>
+            by hand.
+          </p>
+        </div>
+
+        <!--
           What stands when the job cannot be shown: no code in the address, an
           expired one, Relay unreachable, or JavaScript turned off. Visible by
           default for exactly that reason.

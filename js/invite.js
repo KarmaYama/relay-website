@@ -93,6 +93,9 @@
     }
     write('inviteCodeLabel', 'About this link');
     write('inviteCodeHint', 'Your runner can send you another one.');
+    // A dead code has nothing to open, and offering to would just fail in the
+    // app instead of failing here.
+    hide('inviteOpen');
   }
 
   function render(proposal) {
@@ -115,6 +118,29 @@
     show('inviteJob');
   }
 
+  /// Offers the way into the app, for somebody who already has it.
+  ///
+  /// Hiding the code once the job loaded was a mistake: it meant the page was
+  /// most useful to a stranger and least useful to somebody who already had
+  /// Relay, who was left looking at an errand with no way to accept it and no
+  /// code to type. Both stay on the page now.
+  ///
+  /// The link uses a scheme the app claims outright rather than the web address
+  /// it has to be verified against, because that verification is decided when
+  /// the app is installed — so anybody who installed Relay before job links
+  /// existed would never be handed across by the web address alone.
+  function offerTheApp(code) {
+    var link = document.getElementById('inviteOpenLink');
+    if (link) link.setAttribute('href', 'relay://j/' + encodeURIComponent(code));
+    write('inviteOpenCode', spaced(code));
+    show('inviteOpen');
+  }
+
+  /// Groups a code in twos, the way it is read aloud.
+  function spaced(code) {
+    return code.replace(/(.{2})(?=.)/g, '$1 ');
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     var code = codeFromAddress();
 
@@ -129,6 +155,7 @@
     }
 
     write('inviteCode', code);
+    offerTheApp(code);
 
     // The job itself.
     //
