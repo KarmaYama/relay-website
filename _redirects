@@ -7,3 +7,11 @@
 /licence    /eula       301
 /license    /eula       301
 /cookies    /data-policy      301
+
+# A job invitation opened without the app installed.
+#
+# With Relay installed Android never gets here — it opens the app on the job.
+# Without it, the link has to land somewhere that explains what it is and offers
+# the download, rather than a 404 handed to somebody who has never heard of us
+# by a runner they are deciding whether to trust.
+/j/*        /invite.html    200

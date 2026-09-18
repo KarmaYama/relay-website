@@ -12,3 +12,13 @@
   Content-Type: application/json; charset=utf-8
   Cache-Control: public, max-age=300
   Access-Control-Allow-Origin: *
+
+# Android reads this at install time to confirm that relay.africa and the Relay
+# app belong to the same people. Getting it wrong does not break the link — it
+# just means Android asks which app should open it, which is the friction the
+# link exists to remove. It must be served as JSON and must not be cached hard,
+# because a signing key can change.
+/.well-known/assetlinks.json
+  Content-Type: application/json; charset=utf-8
+  Cache-Control: public, max-age=300
+  Access-Control-Allow-Origin: *

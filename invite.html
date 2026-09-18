@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-dark">
+<head>
+  <meta charset="utf-8" />
+  <title>Relay | Someone sent you a job</title>
+  <meta content="A runner has sent you a job on Relay. Install Relay to see what they are offering before you agree to anything." name="description" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <!-- Not indexed. Every one of these pages is about one private arrangement
+       between two people, and the code in the address is the only thing keeping
+       it private. -->
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/png" href="images/favicon/icon.png" />
+  <link href="vendor/font-awesome-6.7.2/css/all.min.css" rel="stylesheet" />
+  <link href="css/index.css" rel="stylesheet" type="text/css" />
+  <link href="css/mobile.css" rel="stylesheet" type="text/css" />
+  <script src="js/invite.js" type="text/javascript" defer></script>
+</head>
+
+<body>
+  <div class="page-container">
+    <header class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <span style="font-weight: 800; font-size: 22px; letter-spacing: -0.5px; color: var(--color-text-primary);">RELAY</span>
+      </a>
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">What is Relay?</a>
+      </nav>
+    </header>
+
+    <!--
+      Where a job link lands when Relay is not installed.
+
+      With the app on the phone, nobody sees this: Android opens Relay straight
+      on the job. This is the other case — somebody who has never heard of Relay,
+      sent a link by a runner they are deciding whether to trust. A 404 there
+      would end it, and would end it in a way that makes the runner look like a
+      scammer.
+
+      So this page has one job: say what the link is, say why the app is worth
+      installing, and carry the code across so nothing has to be remembered.
+    -->
+    <main style="max-width: 560px; margin: 0 auto; padding: 60px 20px;">
+      <section>
+        <div class="heading centered">
+          <h1 style="font-size: 30px;" class="balanced">Someone has sent you a job</h1>
+          <p class="paragraph m secondary balanced">
+            A runner has written down an errand they agreed with you. Install
+            Relay to see exactly what they are offering — and who they are —
+            before you agree to anything.
+          </p>
+        </div>
+
+        <div style="background: var(--color-surface); border-radius: 16px; padding: 24px; margin-top: 28px; border: 1px solid var(--color-border-level-2);">
+          <p class="paragraph s secondary" style="margin: 0 0 6px 0;">Your code</p>
+          <p id="inviteCode"
+             style="font-family: var(--font-mono); font-size: 32px; font-weight: 800; letter-spacing: 6px; margin: 0; color: var(--color-text-primary);">
+            ——————
+          </p>
+          <p class="paragraph s secondary" style="margin-top: 10px;">
+            Enter this in Relay if the link does not open the app by itself.
+          </p>
+        </div>
+
+        <a class="button primary full-width" href="download.html"
+           style="margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+          <i class="fa-brands fa-android"></i> Get Relay
+        </a>
+
+        <div style="margin-top: 36px;">
+          <h2 style="font-size: 18px;">Why this is not just a WhatsApp message</h2>
+
+          <p class="paragraph s secondary" style="margin-top: 14px;">
+            <strong style="color: var(--color-text-primary);">You will see who they are.</strong>
+            Every runner on Relay has had their government ID checked against a
+            photograph of their face, by a person. You are not taking anybody's
+            word for it.
+          </p>
+
+          <p class="paragraph s secondary">
+            <strong style="color: var(--color-text-primary);">You pay them directly.</strong>
+            Cash, EcoCash, however the two of you agree. The money never passes
+            through Relay, so we cannot hold it up or take a cut of it.
+          </p>
+
+          <p class="paragraph s secondary">
+            <strong style="color: var(--color-text-primary);">If it goes wrong, there is proof.</strong>
+            What was agreed, when each step happened, what was said, and
+            photographs at collection and handover — kept permanently. That is
+            what an argument three months later gets decided on.
+          </p>
+
+          <p class="paragraph s secondary" style="margin-top: 18px;">
+            Nothing is agreed by opening this. You will see the errand and what
+            it costs first, and you can change the amount if the two of you
+            remember it differently.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-menu">
+        <div>
+          <p class="paragraph s">
+            © 2026 Relay.<br />
+            Zimbabwe &#8594; Southern Africa.<br>
+            <span style="color: var(--color-text-tertiary);">Verified people. Permanent records.</span>
+          </p>
+        </div>
+        <div>
+          <div class="link-list">
+            <a href="legal.html" class="ui s">Terms of Service</a>
+            <a href="privacy.html" class="ui s">Privacy Policy</a>
+            <a href="index.html" class="ui s">What is Relay?</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
