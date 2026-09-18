@@ -77,6 +77,24 @@
     return line;
   }
 
+  /// Says why there is no job to show.
+  ///
+  /// Replaces the code rather than sitting beside it. A code that no longer
+  /// works is not worth reading out, and leaving it on the page invites
+  /// somebody to keep trying it.
+  function explain(reason) {
+    var code = document.getElementById('inviteCode');
+    if (code) {
+      code.textContent = reason;
+      code.style.letterSpacing = '0';
+      code.style.fontSize = '17px';
+      code.style.fontWeight = '600';
+      code.style.fontFamily = 'inherit';
+    }
+    write('inviteCodeLabel', 'About this link');
+    write('inviteCodeHint', 'Your runner can send you another one.');
+  }
+
   function render(proposal) {
     write('runnerName', proposal.runner_name);
 
@@ -112,17 +130,41 @@
 
     write('inviteCode', code);
 
-    // The job itself. A failure here is not worth reporting loudly — the page
-    // already says enough to be useful, and somebody who has just been sent a
-    // link does not need to be told about a network error.
+    // The job itself.
+    //
+    // Failures here used to be swallowed whole, which made every one of them
+    // look identical: the page kept its code and its sales pitch and said
+    // nothing. A code that had already been used, a code that had lapsed, and
+    // Relay being unreachable all produced the same page, so the one person who
+    // could act on it — by asking their runner for another code — was not told
+    // there was anything to act on.
+    //
+    // So the two the server can explain are now said out loud, in its words.
+    // A network failure still passes quietly: the page already says enough to
+    // be useful, and somebody who has just been handed a link does not need to
+    // hear about a fetch.
     fetch(API + '/jobs/invitations/' + encodeURIComponent(code), {
       headers: { Accept: 'application/json' }
     })
       .then(function (response) {
-        if (!response.ok) throw new Error('not available');
-        return response.json();
+        if (response.ok) return response.json().then(render);
+
+        // 404 — no such code. 409 — used already, or out of time. Both are
+        // about this invitation and both have a remedy, so both are said.
+        if (response.status === 404 || response.status === 409) {
+          return response
+            .json()
+            .catch(function () {
+              return {};
+            })
+            .then(function (body) {
+              explain(
+                body.error ||
+                  'This invitation is no longer open. Ask your runner for a new one.'
+              );
+            });
+        }
       })
-      .then(render)
       .catch(function () {
         // Left as it was: the code, the download, and why it is worth it.
       });
